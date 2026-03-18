@@ -2,10 +2,25 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
-body {
-  background: #465082;
-background: linear-gradient(231deg, rgba(70, 80, 130, 1) 0%, rgba(47, 60, 92, 1) 35%, rgba(50, 64, 102, 1) 60%, rgba(43, 43, 32, 1) 100%);
-  border: 1px black solid;
+html, body {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1200px;
+
+    background-size: 80px 80px, 80px 80px, 100% 100%;
+    background-image:
+        linear-gradient(to right, rgba(0,0,0,0.10) 0.5px, transparent 1px),
+        linear-gradient(to bottom, rgba(0,0,0,0.10) 0.5px, transparent 1px),
+        linear-gradient(229deg, rgba(255, 255, 255, 1) 0%, rgba(200, 200, 200, 1) 100%);
+
+    background-attachment: fixed;
+    /* background: linear-gradient(229deg, rgba(8, 8, 8, 1) 0%, rgba(15, 15, 15, 1) 100%); */
+
+    min-height: 100vh;
+    background-repeat: repeat, repeat, no-repeat;
+    color: hsl(0, 0%, 95%);
+    font-family: sans-serif;
 }

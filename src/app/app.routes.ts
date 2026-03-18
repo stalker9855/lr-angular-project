@@ -1,9 +1,15 @@
 import { Routes } from '@angular/router';
-import { GroupInfo } from './group-info/group-info';
+import { Wine } from './wine/wine';
+import { Greeting } from './greeting/greeting';
 
 export const routes: Routes = [
   {
-    path: 'group',
-    component: GroupInfo
-  }
+    component: Greeting,
+    path: '',
+    pathMatch: 'full',
+  },
+  {
+    component: Wine,
+    path: 'wine',
+  },
 ];

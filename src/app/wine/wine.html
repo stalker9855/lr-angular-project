@@ -1,0 +1,47 @@
+<div class="wine-container">
+  <div *ngFor="let wine of wines" class="wine-card">
+
+    <h3>{{ wine.name }}</h3>
+
+    <p
+      [ngClass]="{
+        'white-wine': wine.type === 'Біле',
+        'red-wine': wine.type === 'Червоне',
+        'rose-wine': wine.type === 'Рожеве',
+        'sparkling-wine': wine.type === 'Ігристе'
+      }"
+    >
+      {{ wine.type }}
+    </p>
+
+    <div [ngSwitch]="wine.type">
+      <span *ngSwitchCase="'Біле'" >WHITE TYPE</span>
+      <span *ngSwitchCase="'Червоне'">RED TYPE</span>
+      <span *ngSwitchCase="'Рожеве'" >PINK TYPE</span>
+      <span *ngSwitchCase="'Ігристе'">SPARKILNG TYPE</span>
+      <span *ngSwitchDefault>Unknown</span>
+    </div>
+
+    <div style="display: flex; gap: 8px; justify-content: center;">
+      <span>{{ wine.years }} years</span>
+
+      <span *ngIf="wine.years > 10; else youngWine" class="old-wine">
+        Old
+      </span>
+
+      <ng-template #youngWine>
+        <span class="young-wine">Young</span>
+      </ng-template>
+    </div>
+
+<p
+  [ngStyle]="{
+    'color': wine.price > 1500 ? 'green' : 'black',
+    'font-weight': wine.years > 15 ? 'bold' : 'normal'
+  }"
+>
+  Price: {{ wine.price | currency:'UAH' }}
+</p>
+
+  </div>
+</div>

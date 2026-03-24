@@ -1,12 +1,7 @@
 <div class="user-card text-center p-2">
-  {{ user().avatar}}
-  <img
-    src="https://reqres.in/img/faces/1-image.jpg"
-    alt="{{ user().first_name }}"
-    class="img-thumbnail rounded-circle mb-2"
-    width="100"
-    height="100"
-  >
+  <!-- <img src="user().avatar" alt="{{ user().first_name }}"  -->
+  <img src="{{ 'https://placehold.co/100x100' }}" alt="{{ user().first_name }}"
+    class="img-thumbnail rounded-circle mb-2" width="100" height="100">
   <p class="mb-0"><strong>{{ user().first_name }} {{ user().last_name }}</strong></p>
   <p class="text-muted">{{ user().email }}</p>
 </div>

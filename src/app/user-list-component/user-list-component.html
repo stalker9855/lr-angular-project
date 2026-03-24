@@ -1,6 +1,10 @@
-<ng-container *ngFor='let user of users()'>
+<div class="d-flex">
+@for (user of users(); track user.id) {
 <app-user-component
-  [user]="user"
+[user]="user"
 >
 </app-user-component>
-</ng-container>
+}
+
+
+</div>

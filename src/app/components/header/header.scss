@@ -19,5 +19,9 @@
       transform: scale(1.25);
       cursor: pointer;
     }
+
+    & a.active {
+      font-weight: bold;
+    }
   }
 }
